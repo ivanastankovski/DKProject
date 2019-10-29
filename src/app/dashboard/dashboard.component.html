@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="row">
+    <div
+      class="col"
+      *ngFor="let item of menuItems"
+      class="card">
+        <div class="card-body">
+          <a routerLink="/detail/{{item.id}}">
+            <img [src]="item.image" alt="{{item.name}}" style="width: 200px;">
+          </a>
+        </div>
+    </div>
+  </div>
+  <div class="row">
+    <button class="btn btn-dark" routerLink="/menu">Check Our Menu</button>
+  </div>
+</div>
+

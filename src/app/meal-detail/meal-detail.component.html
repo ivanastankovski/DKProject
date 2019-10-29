@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="row">
+    <!-- Edit a meal -->
+    <div class="col-md-6">
+      <div
+        class="card"
+        *ngIf="meal">
+        <div class="card-body">
+          <h5 class="card-title">Edit {{meal.name | uppercase}}</h5>
+            <p class="card-text"><small class="text-muted">id: {{meal.id}}</small></p>
+          <div class="form-group">
+            <label for="name">Edit Meal Name</label>
+            <input
+              type="text"
+              id="name"
+              class="form-control"
+              [(ngModel)]="meal.name">
+            <label for="details">Edit Details</label>
+            <textarea
+              name="details"
+              id="details"
+              style="min-height: 100px;"
+              class="form-control"
+              [(ngModel)]="meal.details">
+            </textarea>
+            <label for="image">Edit Image</label>
+            <input
+              type="text"
+              name="image"
+              class="form-control"
+              id="image"
+              [(ngModel)]="meal.image">
+          </div>
+        <hr>
+        <button class="btn btn-dark" (click)="goBack()">Go Back</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <img [src]="meal.image" class="card-img" alt="{{meal.image}}">
+    </div>
+    <!-- End Edit -->
+  </div>
+</div>
